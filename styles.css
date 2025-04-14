@@ -30,6 +30,7 @@ body {
 }
 /** For main to span available height */
 html, body {
+    min-width: 320px;
     height: 100%;
 }
 /** Header */
@@ -58,8 +59,9 @@ main {
     aspect-ratio: 2 / 3;
     align-items: center;
     background-color: #212121;
+    border: 2px solid #2e2e2e;
     border-radius: 15px;
-    box-shadow: 3px 3px 1px 5px #424242;
+    box-shadow: 5px 5px 1px 3px #1a1a1a;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -79,7 +81,8 @@ main {
 #screen {
     aspect-ratio: 4 / 1;
     background-color: #E0E0E0;
-    box-shadow: 0px 0px 10px 1px #E0E0E0;
+    box-shadow: 0px 0px 5px 0.5px #E0E0E0,
+    inset 3px 3px 0px 0px #383838;
     max-width: 250px;
     width: 100%;
 }
