@@ -102,7 +102,7 @@ main {
     border-radius: 10px;
     box-shadow: 1px 1px 1px 2px #bdbdbd;
     flex: 1 0 calc(25% - 10px);
-    transition: background-color 0.2s;
+    transition: all 0.1s ease;
 }
 .button:hover {
     background-color: #bdbdbd;
