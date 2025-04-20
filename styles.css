@@ -98,7 +98,6 @@ main {
     max-width: 250px;
 }
 .button {
-    transition: all 0.1s ease;
     background-color: #e0e0e0;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 2px #bdbdbd;
