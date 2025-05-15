@@ -83,12 +83,16 @@ main {
     background-color: #E0E0E0;
     box-shadow: 0px 0px 5px 0.5px #E0E0E0,
     inset 3px 3px 0px 0px #383838;
+    font-size: 2.5rem;
     max-width: 250px;
+    padding: 10px;
+    text-align: right;
     width: 100%;
 }
 #button-container {
     aspect-ratio: 1 / 1;
     display: flex;
+    flex: 1 0 auto;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
@@ -114,6 +118,7 @@ main {
 }
 #equals {
     background-color: #FFA726;
+    flex: 1 0 50%;
 }
 #equals:hover {
     background-color: #FB8C00;
