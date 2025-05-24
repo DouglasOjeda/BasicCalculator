@@ -1,6 +1,10 @@
 // Better button clicking on mobile
 document.addEventListener('touchstart', () => {}, true);
-
+/**
+ * Prints 
+ * @param {} button 
+ * @returns 
+ */
 function printButton(button) {
     const newFormula = formula + button.textContent;
     printFormula(newFormula);
@@ -23,7 +27,14 @@ function clearEntry() {
 }
 
 function evaluateEquation() {
-    
+    console.log(screen.textContent.length);
+    console.log(formula.length);
+    let solvedEquation = NaN;
+    let i = 0;
+    while (formula.charAt(i) )
+    for (let i = 0; i < formula.length; i++) {
+        
+    }
 }
 
 function printFormula(formula) {
