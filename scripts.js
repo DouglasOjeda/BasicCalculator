@@ -27,9 +27,75 @@ function clearEntry() {
 }
 
 function evaluateEquation() {
-    for (let i = 0; formula.length; i++) {
-        let
+    console.log(typeof(formula));
+    let numbers = [];
+    let operands = [];
+    let number = "";
+    for (let i = 0; i < formula.length; i++) {
+        let currentCharacter = formula.charAt(i);
+        switch (currentCharacter) {
+            case '÷':
+            case 'x':
+            case '%':
+            case '+':
+            case '-':
+                operands.push(currentCharacter);
+                numbers.push(Number.parseFloat(number));
+                number = "";
+                break;
+            default:
+                number += currentCharacter;
+                break;
+        }
     }
+    numbers.push(Number.parseFloat(number));
+    console.log(numbers);
+    for (let i = 0; i < operands.length; i++) {
+        switch (operands.at(i)) {
+            case '÷':
+                numbers[i] = numbers.at(i) / numbers.at(i + 1);
+                numbers.splice(i + 1, 1);
+                operands.splice(i, 1);
+                i--;
+                break;
+            case 'x':
+                numbers[i] = numbers.at(i) * numbers.at(i + 1);
+                numbers.splice(i + 1, 1);
+                operands.splice(i, 1);
+                i--;
+                break;
+            case '%':
+                numbers[i] = numbers.at(i) % numbers.at(i + 1);
+                numbers.splice(i + 1, 1);
+                operands.splice(i, 1);
+                i--;
+                break;
+            default:
+                break;
+        }
+    }
+    for (let i = 0; i < operands.length; i++) {
+        switch (operands.at(i)) {
+            case '+':
+                numbers[i] = numbers.at(i) + numbers.at(i + 1);
+                numbers.splice(i + 1, 1);
+                operands.splice(i, 1);
+                i--;
+                break;
+            case '-':
+                numbers[i] = numbers.at(i) - numbers.at(i + 1);
+                numbers.splice(i + 1, 1);
+                operands.splice(i, 1);
+                i--;
+                break;
+            default:
+                break;
+        }
+    }
+    // Empty String added to keep formula as a string.
+    formula = numbers[0] + "";
+    screen.textContent = formula;
+    console.log(numbers);
 }
 
 function printFormula(formula) {
