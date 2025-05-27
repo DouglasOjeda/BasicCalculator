@@ -27,7 +27,7 @@ function clearEntry() {
 }
 
 function evaluateEquation() {
-    console.log(typeof(formula));
+    formula += "";
     let numbers = [];
     let operands = [];
     let number = "";
@@ -92,9 +92,13 @@ function evaluateEquation() {
                 break;
         }
     }
-    // Empty String added to keep formula as a string.
-    formula = numbers[0] + "";
-    screen.textContent = formula;
+    if (Number.isInteger(numbers[0])) {
+        formula = numbers[0] + "";
+    }
+    else {
+        formula = numbers[0].toFixed(2) + "";
+    }
+    printFormula(formula);
     console.log(numbers);
 }
 
