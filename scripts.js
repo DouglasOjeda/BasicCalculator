@@ -9,7 +9,7 @@ function printButton(button) {
     const newFormula = formula + button.textContent;
     printFormula(newFormula);
     isOverflowing = screen.scrollWidth > screen.clientWidth;
-    if (isOverflowing) {
+    if (isOverflowing) {  
         printFormula(formula);
         return;
     }
@@ -27,13 +27,8 @@ function clearEntry() {
 }
 
 function evaluateEquation() {
-    console.log(screen.textContent.length);
-    console.log(formula.length);
-    let solvedEquation = NaN;
-    let i = 0;
-    while (formula.charAt(i) )
-    for (let i = 0; i < formula.length; i++) {
-        
+    for (let i = 0; formula.length; i++) {
+        let
     }
 }
 
