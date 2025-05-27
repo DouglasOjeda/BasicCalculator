@@ -108,6 +108,9 @@ main {
     flex: 1 0 calc(25% - 10px);
     transition: all 0.1s ease;
 }
+.button {
+  touch-action: manipulation;
+}
 .button:hover {
     background-color: #bdbdbd;
     cursor: pointer;
