@@ -1,12 +1,29 @@
 // Better button clicking on mobile
 document.addEventListener('touchstart', () => {}, true);
+
 /**
- * Prints 
- * @param {} button 
- * @returns 
+ * Prints the text content from the buttons to the calculator screen.
+ * @param {HTMLButtonElement} button - The button whose text content will be used
  */
 function printButton(button) {
-    const newFormula = formula + button.textContent;
+    const buttonTextContent = button.textContent
+    switch (buttonTextContent) {
+        case '.':
+        case '%':
+        case '÷':
+        case 'x':
+        case '-':
+        case '+':
+            if (isOperatorDecimalRepeating) {
+                return;
+            }
+            isOperatorDecimalRepeating = true;
+            break;
+        default:
+            isOperatorDecimalRepeating = false;
+            break;
+    }
+    const newFormula = formula + buttonTextContent;
     printFormula(newFormula);
     isOverflowing = screen.scrollWidth > screen.clientWidth;
     if (isOverflowing) {  
@@ -17,11 +34,13 @@ function printButton(button) {
 }
 
 function clearScreen() {
+    isOperatorDecimalRepeating = false;
     formula = "";
     printFormula(formula);
 }
 
 function clearEntry() {
+    isOperatorDecimalRepeating = false;
     formula = formula.substring(0, formula.length - 1);
     printFormula(formula);
 }
@@ -113,6 +132,7 @@ const clearEntryButton = document.getElementById("clear-entry");
 const equalsButton = document.getElementById("equals");
 let isOverflowing = false;
 let formula = "";
+let isOperatorDecimalRepeating = false;
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => printButton(button));
