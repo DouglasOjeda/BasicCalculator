@@ -9,5 +9,7 @@ this webpage calculator to apply concepts I have learned early on in my web dev 
 - Styling and organizing html elements to represent a calculator visually.
 
 (Things I could improve):
+- I could implement a finite state machine, for parsing the String, but at the moment I was still
+  learning about classes in javascript. It would definitely have been better. 
 - I could add more button input validation, for better user experience .
 - I could refactor some of the functions, for better readability.

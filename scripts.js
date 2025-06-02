@@ -15,6 +15,9 @@ function printButton(button) {
         case '-':
         case '+':
             if (isOperatorDecimalRepeating) {
+                clearEntry();
+                const newFormula = formula + buttonTextContent;
+                printFormula(newFormula);
                 return;
             }
             isOperatorDecimalRepeating = true;
